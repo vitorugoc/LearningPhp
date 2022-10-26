@@ -21,6 +21,8 @@ use App\Http\Controllers\ContatoController;
 
 use App\Http\Controllers\TesteController;
 
+use App\Http\Controllers\FornecedorController;
+
 Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
 
 Route::get('/sobre-nos', [SobreController::class, 'sobre'])->name('site.sobrenos');
@@ -38,9 +40,7 @@ Route::prefix('/app')->group(function () {
         return 'clientes';
     })->name('app.clientes');
 
-    Route::get('/fornecedores', function () {
-        return 'fornecedores';
-    })->name('app.fornecedores');
+    Route::get('/fornecedores', [FornecedorController::class, 'index'])->name('app.fornecedores');
 
     Route::get('/produtos', function () {
         return 'produtos';
