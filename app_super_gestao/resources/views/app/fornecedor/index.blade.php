@@ -3,11 +3,17 @@
 @php
 @endphp
 
-
-Fornecedor: {{ $fornecedores[0]['nome'] }}
-<br>
-Status: {{ $fornecedores[0]['status'] }}
-<br>
-@if( ($fornecedores[0]['status'] == 'N') )
-    Fornecedor inativo
-@endif
+@isset($fornecedores)
+    @forelse ($fornecedores as $indice => $fornecedor)
+        Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] ?? 'Dado não fornecido' }}
+        <br>
+        Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
+        <hr>
+    @empty
+        Não existem fornecedores cadastrados!!!
+    @endforelse
+@endisset
