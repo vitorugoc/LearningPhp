@@ -4,5 +4,5 @@
 
 @section('conteudo')
 @include('app.layouts._partials.topo')
-    <br><br><br><br>Produto
+    <br><br><br><br>Produtos
 @endsection
