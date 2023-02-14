@@ -12,9 +12,9 @@ import TheWelcome from './components/TheWelcome.vue'
     </div>
   </header>
 
-  <main>
+  <!-- <main>
     <TheWelcome />
-  </main>
+  </main> -->
 </template>
 
 <style scoped>
