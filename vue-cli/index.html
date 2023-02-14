@@ -1,16 +1,38 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<div id="app">{{ message }}</div>
-
+<body>
+    <div id="app">
+        {{ somar() }}<br>
+        {{ subtrair() }}<br>
+        {{ multiplicar() }}<br>
+        {{ dividir() }}<br>
+        {{ numeroAleatorio() }}
+    </div> 
+</body>
 <script>
   const { createApp } = Vue
 
   createApp({
     data() {
       return {
-        message: 'Primeiro template controlado pelo Vue',
-
       }
-    }
+    },
+    methods: {
+        somar: function somar(){
+            return 4 + 2;
+        },
+        subtrair: function(){
+            return 4-2;
+        },
+        multiplicar: () =>{
+            return 4 * 2;
+        },
+        dividir() {
+            return 4/2;
+        },
+        numeroAleatorio(){
+            return Math.random()
+        }
+    },
   }).mount('#app')
 </script>
