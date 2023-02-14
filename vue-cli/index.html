@@ -15,17 +15,19 @@
   createApp({
     data() {
       return {
+        n1: 10,
+        n2: 5
       }
     },
     methods: {
         somar: function somar(){
-            return 4 + 2;
+            return this.n1 + this.n2;
         },
         subtrair: function(){
             return 4-2;
         },
         multiplicar: () =>{
-            return 4 * 2;
+            return this.n1 * this.n2; //contexto léxico
         },
         dividir() {
             return 4/2;
