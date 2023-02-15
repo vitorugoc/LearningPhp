@@ -4,7 +4,7 @@
 <body>
     <div id="app">
       <input type="text" v-on:keyup="imprimirTexto('Enviando Parâmetro')">
-      <button @click="mensagemAlerta()">Botão</button>
+      <button @click="mensagemAlerta($event)">Botão</button>
     </div> 
 </body>
 <style>
@@ -24,8 +24,8 @@
       imprimirTexto(texto){
         console.log(texto)
       },
-      mensagemAlerta(){
-        alert("Mensagem de alerta")
+      mensagemAlerta(e){
+        console.log(e)
       }
   }}).mount('#app')
 </script>
