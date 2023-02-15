@@ -3,10 +3,8 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      <a v-bind:href="site">Site</a>
-      <p v-bind:class="cor">Entendendo a diretiva v-bind</p>
-      <input type="text" v-bind:placeholder="instrucaoDePreenchimento" v-bind:value="valor">
-      <input type="checkbox" v-bind:checked="check">
+      <input type="text" v-on:keyup="imprimirTexto('Enviando Parâmetro')">
+      <button @click="mensagemAlerta()">Botão</button>
     </div> 
 </body>
 <style>
@@ -20,14 +18,14 @@
   createApp({
     data() {
       return {
-        site: 'https://jorgesantana.net.br',
-        cor: 'verde',
-        instrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
-        valor: 'Entendendo a diretiva v-bind',
-        check: false
       }
     },
     methods: {
-
+      imprimirTexto(texto){
+        console.log(texto)
+      },
+      mensagemAlerta(){
+        alert("Mensagem de alerta")
+      }
   }}).mount('#app')
 </script>
