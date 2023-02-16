@@ -3,14 +3,49 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      <input type="text" v-on:keyup="imprimirTexto('Enviando Parâmetro')">
-      <button @click="mensagemAlerta($event)">Botão</button>
+      <div class="borda div-principal" :class="cor">
+        Cor: {{ cor }}<br>
+        X: {{x}}<br>
+        Y: {{y}}<br>
+      </div>
+      <tr></tr>
+      <div @click="mudarCor('verde')" class="borda div-comum" ></div>
+      <div class="borda div-comum" @mouseover="mudarCor('azul')" @mouseout="mudarCor('vermelho')"></div>
+      <div class="borda div-comum" @mousemove="cordenadas($event)"></div>
     </div> 
 </body>
 <style>
   .verde {
-    color: green;
+    background-color: green;
   }
+
+  .branco {
+    background-color: white;
+  }
+
+  .azul {
+    background-color: blue;
+  }
+
+  .vermelho {
+    background-color: red;
+  }
+
+  .borda {
+    border: 1px solid;
+  }
+
+  .div-principal{
+    width: 200px;
+    height: 200px;
+  }
+
+  .div-comum{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+  }
+</style>
 </style>
 <script>
   const { createApp } = Vue
@@ -18,14 +53,18 @@
   createApp({
     data() {
       return {
+        cor: 'branco',
+        x: '',
+        y: '',
       }
     },
     methods: {
-      imprimirTexto(texto){
-        console.log(texto)
+      mudarCor(cor){
+        this.cor = cor
       },
-      mensagemAlerta(e){
-        console.log(e)
+      cordenadas(e){
+        this.x = e.clientX;
+        this.y = e.clientY;
       }
   }}).mount('#app')
 </script>
