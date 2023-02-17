@@ -3,16 +3,20 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      <input type="text" id="inputTexto">
-      <br>
-      <select name="" id="opcoes">
-        <option value="A">Opção 1</option>
-        <option value="B">Opção 2</option>
-        <option value="C">Opção 3</option>
-      </select>
-      <br>
-      <p id="paragrafo" style="color:green">Parágrafo</p>
-      <button @click="selecionarElementoFilho()">Botão</button>
+      <!--- v-if simples -->
+      <button @click="exibirSaldo = !exibirSaldo">
+        <span v-if="!exibirSaldo">Exibir Saldo</span>
+        <span v-if="exibirSaldo">Ocultar Saldo</span>
+      </button> <!-- toggle -->
+      <p>Saldo: <span v-if="exibirSaldo">R$ {{saldo}} </span></p>
+      <hr>
+
+      <!-- v-if e v-else -->
+      Idade: <input type="text" id="inputIdade" @blur="setIdade()">
+      <p v-if="idade < 18">Menor de idade</p>
+      <p v-else>Maior de idade</p>
+
+      <!-- v-if, v-else-if e v-else-->
     </div> 
 </body>
 <style></style>
@@ -22,11 +26,14 @@
   createApp({
     data() {
       return{
+        saldo: 4570.17,
+        exibirSaldo: false,
+        idade: 0
       }
     },
     methods: {
-      selecionarElementoFilho(){
-        console.log(paragrafo.style.color)
+      setIdade(){
+        this.idade = (inputIdade.value)
       }
   }}).mount('#app')
 </script>
