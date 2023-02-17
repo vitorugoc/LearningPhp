@@ -3,7 +3,7 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      <a href="https://jorgesantana.net.br" target="_blank" v-on:click.prevent="prevenirComportamentoPadrão()">Link</a>
+      <a href="https://jorgesantana.net.br" target="_blank" v-on:click.prevent="prevenirComportamentoPadrao()">Link</a>
       <br>
       Mensagem: {{msg}}
       <hr>
@@ -65,7 +65,7 @@
       }
     },
     methods: {
-      prevenirComportamentoPadrão(){
+      prevenirComportamentoPadrao(){
         event.preventDefault()
         this.msg = 'Comportamento padrão ativado'
       },
