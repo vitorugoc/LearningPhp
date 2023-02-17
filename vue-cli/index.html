@@ -3,79 +3,30 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      <a href="https://jorgesantana.net.br" target="_blank" v-on:click.prevent="prevenirComportamentoPadrao()">Link</a>
+      <input type="text" id="inputTexto">
       <br>
-      Mensagem: {{msg}}
-      <hr>
-      <button @click.once="executarUmaVez()">Botão</button>
-      <p>Cliques: {{cliques}}</p>
-      <hr>
-      <form @submit.prevent.once="prevenirUmaVez()">
-        <button type="submit">Enviar</button>
-      </form>
-      <p>Formulário: {{ formulario }}</p>
-      <hr>
-      <input type="text" @keyup="capturandoTeclas($event)">
-      <p>Teclas: {{ teclas }}</p>
+      <select name="" id="opcoes">
+        <option value="A">Opção 1</option>
+        <option value="B">Opção 2</option>
+        <option value="C">Opção 3</option>
+      </select>
+      <br>
+      <p id="paragrafo" style="color:green">Parágrafo</p>
+      <button @click="selecionarElementoFilho()">Botão</button>
     </div> 
 </body>
-<style>
-  .verde {
-    background-color: green;
-  }
-
-  .branco {
-    background-color: white;
-  }
-
-  .azul {
-    background-color: blue;
-  }
-
-  .vermelho {
-    background-color: red;
-  }
-
-  .borda {
-    border: 1px solid;
-  }
-
-  .div-principal{
-    width: 200px;
-    height: 200px;
-  }
-
-  .div-comum{
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-  }
-</style>
+<style></style>
 <script>
   const { createApp } = Vue
 
   createApp({
     data() {
       return{
-        msg: '',
-        cliques: 0,
-        formulario: '',
-        teclas: ''
       }
     },
     methods: {
-      prevenirComportamentoPadrao(){
-        event.preventDefault()
-        this.msg = 'Comportamento padrão ativado'
-      },
-      executarUmaVez(){
-        this.cliques++
-      },
-      prevenirUmaVez(){
-        this.formulario = 'Prevenindo o comportamento padrão'
-      },
-      capturandoTeclas(event){
-        this.teclas += event.key
+      selecionarElementoFilho(){
+        console.log(paragrafo.style.color)
       }
   }}).mount('#app')
 </script>
