@@ -4,7 +4,7 @@
 <body>
     <div id="app">
       {{paciente}}<br>
-      <!-- <input type="text" v-bind:value="paciente" v-on:keyup="paciente = $event.target.value"> -->
+      <input type="text" v-bind:value="paciente" v-on:keyup="paciente = $event.target.value">
       <input type="text" v-model="paciente">
     </div> 
 </body>
