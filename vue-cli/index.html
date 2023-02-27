@@ -2,21 +2,7 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      {{paciente}}<br>
-      <input type="text" v-bind:value="paciente" v-on:keyup="paciente = $event.target.value">
-      <input type="text" v-model="paciente">
-      <hr>
-      <input type="radio" value="F" v-model="sexo">Feminino
-      <input type="radio" value="M" v-model="sexo">Masculino
-      <br> {{sexo}}
-      <hr>
-      <select name="" id="" v-model="plano">
-        <option value="" disabled>Selecione um plano</option>
-        <option value="1">Básico</option>
-        <option value="2">Plus</option>
-        <option value="3">Master</option>
-      </select>
-      <br>{{plano}}
+      <span>Paciente</span><input type="text" v-model="paciente">
     </div> 
 </body>
 <style></style>
@@ -26,17 +12,16 @@
   createApp({
     data() {
       return{
-        paciente: 'João da Silva',
-        sexo: '',
-        plano: ''
+        paciente: '',
       }
     },
-    methods: {
-      setPaciente(e){
-        this.paciente = e.target.value
+    methods: {},
+    computed: {},
+    watch: {
+      paciente(valorNovo, valorAntigo){
+        console.log(valorNovo, valorAntigo)
       }
     },
-    computed: {}
     }
   ).mount('#app')
 </script>
