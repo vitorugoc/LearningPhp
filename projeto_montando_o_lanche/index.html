@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>         
-                <div class="col-md-6">
+                <div class="col-md-6" v-if="etapa == 1">
                     <div class="row">
                         <div class="col">
                             <div class="card">
@@ -139,7 +139,59 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="row mt-2">
+                        <div class="col d-flex justify-content-end">
+                            <button class="btn btn-primary" @click="fazerPedido">Fazer Pedido</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" v-if="etapa == 2">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                  INFORME SEUS DADOS
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" v-model="inputNome">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Endereço</label>
+                                        <input type="text" class="form-control" v-model="inputEndereco">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="col d-flex justify-content-between">
+                                <button class="btn btn-warning" @click="etapa -= 1">Voltar para o lanche</button>
+                                <button class="btn btn-success" @click="confirmarPedido">Confirmar</button>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                <div class="col-md-6" v-if="etapa == 3">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                  PEDIDO CONFIRMADO
+                                </div>
+                                <div class="card-body">
+                                    <p>Agora é so aguardar 10 minutinhos</p>
+                                    <p>Vamos chamar você em breve :)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="col d-flex justify-content-between">
+                            <button class="btn btn-primary">Repetir pedido</button>
+                            <button class="btn btn-success">Novo Pedido</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>      
@@ -155,6 +207,9 @@
                     inputSalada: [],
                     inputMolhos: [],
                     inputHamburguer: '',
+                    etapa: 1,
+                    inputNome: '',
+                    inputEndereco: ''
                 }
             },
             computed: {
@@ -204,7 +259,25 @@
                             return 'imagens/padrao/hamburguer.png'
                     }
                 }
-            }
+            },
+            methods: {
+                fazerPedido(){
+                    if(this.inputTipoPao && this.inputHamburguer){
+                        this.etapa = 2;
+                    }else{
+                        alert('Você precisa selecionar no mínimo um pão e um hamburguer')
+                    }
+                },
+                confirmarPedido(){
+                    if(this.inputNome && this.inputEndereco){
+                        this.etapa = 3;
+
+                        //realizar uma requisição http para o back-end da aplicação!
+                    }else{
+                        alert('Você precisa informar seu nome e endereço')
+                    }
+                }
+            },
         }).mount('#app')
     </script>
 </body>
