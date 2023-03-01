@@ -2,9 +2,7 @@
 <title>Documento</title>
 <body>
     <div id="app">
-        <h1>Manipulando CSS com VueJs</h1>
-        <div :style= "estilo">
-        Definindo styles com objetos</div>
+      <span>Nome: </span><input type="text" ref="inputNome">
     </div> 
 </body>
 <style>
@@ -18,19 +16,7 @@
       }
     },
     methods: {},
-    computed: {
-      estilo(){
-        let width = Math.floor((Math.random() * 100) + 100)
-        let height = Math.floor((Math.random() * 100) + 100)
-        return{
-          background: 'blue',
-          width: width + 'px',
-          height: height + 'px',
-          padding: 10 + 'px',
-          fontSize: 30 + 'px'
-        }
-      }
-    },
+    computed: {},
     watch: {
     },
     }
