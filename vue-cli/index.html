@@ -3,20 +3,17 @@
 <body>
     <div id="app">
         <h1>Manipulando CSS com VueJs</h1>
-        <p :class="[estilo1, estilo2, estilo3]">Definindo classes com arrays</p>
-        <button @click="estilo2 = ''">Remover o estilo 2</button>
+        <div :style="{
+          background,
+          width: '150px',
+          heigth: '100px',
+          padding: '10px',
+          fontSize  : '20px'
+        }">
+        Definindo styles com objetos</div>
     </div> 
 </body>
 <style>
-  .vermelho{
-    background-color: red;
-  }
-  .texto-branco{
-    color: white;
-  }
-  .destaque{
-    font-weight: bold;
-  }
 </style>
 <script>
   const { createApp } = Vue
@@ -24,9 +21,7 @@
   createApp({
     data() {
       return{
-        estilo1: 'vermelho',
-        estilo2: 'texto-branco',
-        estilo3: 'destaque'
+        background: 'blue'
       }
     },
     methods: {},
