@@ -3,8 +3,8 @@
 <body>
     <div id="app">
         <h1>Manipulando CSS com VueJs</h1>
-        <p :class="{vermelho, ehTextoBranco, ehDestaque }">Definindo classes com objetos</p>
-        <button @click="vermelho = !vermelho">Vermelho</button>
+        <p :class="[estilo1, estilo2, estilo3]">Definindo classes com arrays</p>
+        <button @click="estilo2 = ''">Remover o estilo 2</button>
     </div> 
 </body>
 <style>
@@ -24,9 +24,9 @@
   createApp({
     data() {
       return{
-        vermelho: true,
-        ehTextoBranco: false,
-        ehDestaque: false,
+        estilo1: 'vermelho',
+        estilo2: 'texto-branco',
+        estilo3: 'destaque'
       }
     },
     methods: {},
