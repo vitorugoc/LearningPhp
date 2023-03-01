@@ -3,13 +3,7 @@
 <body>
     <div id="app">
         <h1>Manipulando CSS com VueJs</h1>
-        <div :style="{
-          background,
-          width: '150px',
-          heigth: '100px',
-          padding: '10px',
-          fontSize  : '20px'
-        }">
+        <div :style= "estilo">
         Definindo styles com objetos</div>
     </div> 
 </body>
@@ -21,11 +15,22 @@
   createApp({
     data() {
       return{
-        background: 'blue'
       }
     },
     methods: {},
-    computed: {},
+    computed: {
+      estilo(){
+        let width = Math.floor((Math.random() * 100) + 100)
+        let height = Math.floor((Math.random() * 100) + 100)
+        return{
+          background: 'blue',
+          width: width + 'px',
+          height: height + 'px',
+          padding: 10 + 'px',
+          fontSize: 30 + 'px'
+        }
+      }
+    },
     watch: {
     },
     }
