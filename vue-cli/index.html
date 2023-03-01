@@ -2,25 +2,36 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      <span>Paciente</span><input type="text" v-model="paciente">
+        <h1>Manipulando CSS com VueJs</h1>
+        <p :class="{vermelho, ehTextoBranco, ehDestaque }">Definindo classes com objetos</p>
+        <button @click="vermelho = !vermelho">Vermelho</button>
     </div> 
 </body>
-<style></style>
+<style>
+  .vermelho{
+    background-color: red;
+  }
+  .texto-branco{
+    color: white;
+  }
+  .destaque{
+    font-weight: bold;
+  }
+</style>
 <script>
   const { createApp } = Vue
 
   createApp({
     data() {
       return{
-        paciente: '',
+        vermelho: true,
+        ehTextoBranco: false,
+        ehDestaque: false,
       }
     },
     methods: {},
     computed: {},
     watch: {
-      paciente(valorNovo, valorAntigo){
-        console.log(valorNovo, valorAntigo)
-      }
     },
     }
   ).mount('#app')
