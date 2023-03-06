@@ -2,35 +2,21 @@
 <title>Documento</title>
 <body>
   <div id="app">
-    <p>{{texto}}</p>
-    <button @click="modificarTextoVD()">Adicionar @ (VD)</button>
-    <button onclick="modificarTexto()">Adicionar @</button>
+    <h1>{{titulo}}</h1>
+    <p>{{descricao}}</p>
   </div> 
 </body>
 <style>
 </style>
 <script>
-  function modificarTexto(){
-    let t = document.querySelector('p').innerText
-    t += '@'
-    document.querySelector('p').innerText = t
-  }
   const { createApp } = Vue
 
   createApp({
     data() {
       return{
-        texto: 'DOM e Virtual DOM'
+        titulo: 'Boas-Vindas',
+        descricao: "Chegou a hora de trabalhar com o VueJS 3"
       }
-    },
-    methods: {
-      modificarTextoVD(){
-        this.texto += '@'
-      }
-    },
-    computed: {},
-    watch: {
-    },
-    }
+    }}
   ).mount('#app')
 </script>
