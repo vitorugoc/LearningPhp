@@ -1,35 +1,31 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <title>Documento</title>
 <body>
-    <div id="app">
-      <form action="" ref="formulario">
-      <span>Nome: </span><input type="text" id="inputNome" ref="inputNome">
-      <br>
-      <span>Comentário: </span><textarea></textarea>
-      <br>
-      <button @click.prevent="cadastrar()">Cadastrar</button>
-    </form>
-    <hr>
-    {{resultado}}
-    </div> 
+  <div id="app">
+    <p>{{texto}}</p>
+    <button @click="modificarTextoVD()">Adicionar @ (VD)</button>
+    <button onclick="modificarTexto()">Adicionar @</button>
+  </div> 
 </body>
 <style>
 </style>
 <script>
+  function modificarTexto(){
+    let t = document.querySelector('p').innerText
+    t += '@'
+    document.querySelector('p').innerText = t
+  }
   const { createApp } = Vue
 
   createApp({
     data() {
       return{
-        resultado: ""
+        texto: 'DOM e Virtual DOM'
       }
     },
     methods: {
-      cadastrar(){
-        let nome = this.$refs.inputNome.value
-        let comentario = this.$refs.formulario[1].value
-
-        this.resultado = `${nome} disse "${comentario}"`
+      modificarTextoVD(){
+        this.texto += '@'
       }
     },
     computed: {},
