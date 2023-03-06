@@ -2,7 +2,15 @@
 <title>Documento</title>
 <body>
     <div id="app">
-      <span>Nome: </span><input type="text" ref="inputNome">
+      <form action="" ref="formulario">
+      <span>Nome: </span><input type="text" id="inputNome" ref="inputNome">
+      <br>
+      <span>Comentário: </span><textarea></textarea>
+      <br>
+      <button @click.prevent="cadastrar()">Cadastrar</button>
+    </form>
+    <hr>
+    {{resultado}}
     </div> 
 </body>
 <style>
@@ -13,9 +21,17 @@
   createApp({
     data() {
       return{
+        resultado: ""
       }
     },
-    methods: {},
+    methods: {
+      cadastrar(){
+        let nome = this.$refs.inputNome.value
+        let comentario = this.$refs.formulario[1].value
+
+        this.resultado = `${nome} disse "${comentario}"`
+      }
+    },
     computed: {},
     watch: {
     },
