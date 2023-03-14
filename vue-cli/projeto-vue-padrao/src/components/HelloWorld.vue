@@ -8,8 +8,8 @@
 export default {
   data: () => {
     return {
-      variavel = process.env.VUE_APP_MINHA_VARIAVEL_DE_AMBIENTE
-    }
+      variavel: process.env.VUE_APP_MINHA_VARIAVEL_DE_AMBIENTE,
+    };
   },
   name: "HelloWorld",
 };
