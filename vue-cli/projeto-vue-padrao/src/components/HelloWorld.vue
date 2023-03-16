@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>Componente Vue JS {{ variavel }}</h1>
+    <h1 class="vermelho">Componente Vue JS {{ variavel }}</h1>
   </div>
 </template>
 
@@ -15,4 +15,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.vermelho {
+  color: red;
+}
+</style>
