@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopoComponent />
+    <TopoComponent />|
     <ConteudoComponent></ConteudoComponent>
   </div>
 </template>
