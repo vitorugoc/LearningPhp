@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Topo />
-    <ConteudoComponent></ConteudoComponent>
+    <topo-padrao />
+    <Conteudo></Conteudo>
   </div>
 </template>
 
@@ -12,8 +12,8 @@ import TopoPadrao from './components/layouts/TopoPadrao.vue'
 export default {
   name: 'App',
   components: {
-    ConteudoComponent,
-    Topo: TopoPadrao
+    Conteudo: ConteudoComponent,
+    TopoPadrao: TopoPadrao
   }
 }
 </script>
