@@ -1,7 +1,7 @@
 <template>
   <div>
     <topo-padrao />
-    <Conteudo></Conteudo>
+    <conteudo></conteudo>
   </div>
 </template>
 
