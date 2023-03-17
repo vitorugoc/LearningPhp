@@ -1,12 +1,17 @@
 <template>
-  <div>Home</div>
+  <div>
+    <h1>Componente Home</h1>
+  </div>
 </template>
-  
-  <script>
+
+<script>
 export default {
   name: "HomeView",
 };
 </script>
-  
-  <style></style>
-  
+
+<style>
+h1{
+    color: green;
+}
+</style>

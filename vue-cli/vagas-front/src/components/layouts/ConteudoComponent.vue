@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Conteúdo</p>
+    <h1>Componente Conteúdo</h1>
     <home-view />
     <publicar-vaga-view />
   </div>
@@ -19,4 +19,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+
+</style>

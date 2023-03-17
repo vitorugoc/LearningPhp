@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Componente App</h1>
     <topo-padrao />
     <conteudo></conteudo>
   </div>
@@ -18,12 +19,8 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style scoped>
+h1 {
+  color: red;
 }
 </style>
