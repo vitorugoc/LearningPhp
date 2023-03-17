@@ -4,6 +4,10 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "ConteudoComponent"
+}
+</script>
 
 <style></style>

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'TopoTeste'
+  name: 'TopoComponent'
 }
 </script>
 
