@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Componente App</h1>
+    <p>App - Propriedade $style: {{ $style }}</p>
     <topo-padrao />
     <conteudo></conteudo>
   </div>

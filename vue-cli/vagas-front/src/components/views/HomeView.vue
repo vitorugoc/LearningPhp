@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Componente Home</h1>
+    <p>Home - Propriedade $style: {{ $style }}</p>
   </div>
 </template>
 
