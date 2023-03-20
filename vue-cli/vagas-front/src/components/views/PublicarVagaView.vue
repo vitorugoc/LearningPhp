@@ -1,5 +1,7 @@
 <template>
-  <div>Publicar Vaga</div>
+  <div>
+    <h1>Componente Publicar Vaga</h1>
+  </div>
 </template>
   
   <script>
