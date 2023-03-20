@@ -9,55 +9,53 @@
     <keep-alive>
       <component :is="conteudo" />
     </keep-alive>
-
   </div>
 </template>
 
 <script>
-import HomeView from '../views/HomeView.vue'
-import PublicarVagaView from '../views/PublicarVagaView.vue'
+import HomeView from "../views/HomeView.vue";
+import PublicarVagaView from "../views/PublicarVagaView.vue";
 export default {
   name: "ConteudoComponent",
   data: () => ({
-    teste: 'O  componente foi criado',
-    titulo: 'Componente Conteudo',
-    conteudo: ''
+    teste: "O  componente foi criado",
+    titulo: "Componente Conteudo",
+    conteudo: "",
   }),
   methods: {
     atualizarComponente() {
       this.titulo += "*";
-    }
+    },
   },
   components: {
     HomeView: HomeView,
-    PublicarVagaView: PublicarVagaView
-
+    PublicarVagaView: PublicarVagaView,
   },
   beforeCreate() {
-    console.log('Antes de criar', this.teste)
+    console.log("Antes de criar", this.teste);
   },
   created() {
-    console.log('Criado', this.teste)
+    console.log("Criado", this.teste);
   },
 
   beforeMount() {
-    console.log("Antes de montar o template")
+    console.log("Antes de montar o template");
   },
   mounted() {
-    console.log('Montado')
+    console.log("Montado");
   },
 
   beforeUpdate() {
-    console.log('Antes de atualizar')
+    console.log("Antes de atualizar");
   },
   updated() {
-    console.log('Atualizado')
+    console.log("Atualizado");
   },
   beforeUnmount() {
-    console.log('Antes de desmontar')
+    console.log("Antes de desmontar");
   },
   unmounted() {
-    console.log('Desmontado')
+    console.log("Desmontado");
   },
   /*
 errorCaptured(){
@@ -76,7 +74,7 @@ deactivated(){
   console.log('Componente desativado')
 }
 */
-}
+};
 </script>
 
 <style module>
