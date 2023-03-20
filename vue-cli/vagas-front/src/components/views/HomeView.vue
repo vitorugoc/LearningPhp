@@ -7,13 +7,28 @@
     </div>
     <div class="row mt-5">
       <div class="col-4">
-        <IndicadorComponent titulo="Vagas Abertas" indicador="100" />
+        <IndicadorComponent
+          titulo="Vagas Abertas"
+          indicador="100"
+          bg="bg-dark"
+          color="text-white"
+        />
       </div>
       <div class="col-4">
-        <IndicadorComponent titulo="Profissionais Cadastrados" indicador="125" />
+        <IndicadorComponent
+          titulo="Profissionais Cadastrados"
+          indicador="125"
+          bg="bg-dark"
+          color="text-white"
+        />
       </div>
       <div class="col-4">
-        <IndicadorComponent titulo="Visitantes Online" indicador="25" />
+        <IndicadorComponent
+          titulo="Visitantes Online"
+          indicador="25"
+          bg="bg-light"
+          color="text-dark"
+        />
       </div>
     </div>
   </div>
