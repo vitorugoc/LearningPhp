@@ -3,12 +3,11 @@
     <h1>Componente Publicar Vaga</h1>
   </div>
 </template>
-  
-  <script>
+
+<script>
 export default {
   name: "PublicarVagaView",
 };
 </script>
-  
-  <style></style>
-  
+
+<style></style>
