@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Componente App</h1>
-    <p>App - Propriedade $style: {{ $style }}</p>
     <topo-padrao />
     <conteudo></conteudo>
   </div>
@@ -21,7 +20,4 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  color: red;
-}
 </style>

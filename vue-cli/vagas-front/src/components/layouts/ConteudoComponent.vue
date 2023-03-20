@@ -2,10 +2,10 @@
   <div>
     <h1>Componente Conteúdo</h1>
     <p>Conteudo - Propriedade $style: {{ $style }}</p>
-    <div class="teste-1">
+    <div :class="$style['teste-1']">
       Class teste-1
     </div>
-    <div id="teste-2">
+    <div :id="$style['teste-2']">
       Id teste-2
     </div>
     <home-view />
@@ -26,10 +26,7 @@ export default {
 }
 </script>
 
-<style>
-h1{
-  color: blue
-}
+<style module>
 .teste-1{
   background-color: red;
 }
