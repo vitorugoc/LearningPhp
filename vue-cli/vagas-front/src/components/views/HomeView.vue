@@ -7,22 +7,13 @@
     </div>
     <div class="row mt-5">
       <div class="col-4">
-        <div class="h-100 p-5 rounded-3 border bg-dark text-white">
-          <p>Vagas Abertas</p>
-          <h2>25</h2>
-        </div>
+        <IndicadorComponent />
       </div>
       <div class="col-4">
-        <div class="h-100 p-5 rounded-3 border bg-dark text-white">
-          <p>Profissionais Cadastrados</p>
-          <h2>125</h2>
-        </div>
+        <IndicadorComponent />
       </div>
       <div class="col-4">
-        <div class="h-100 p-5 rounded-3 border bg-light text-dark">
-          <p>Visitantes Online</p>
-          <h2>15</h2>
-        </div>
+        <IndicadorComponent />
       </div>
     </div>
   </div>
@@ -30,10 +21,12 @@
 
 <script>
 import PesquisarVagas from "../comuns/PesquisarVagas.vue";
+import IndicadorComponent from "../comuns/IndicadorComponent.vue";
 export default {
   name: "HomeView",
   components: {
     PesquisarVagas,
+    IndicadorComponent,
   },
   activated() {
     console.log("Componente é ativado");
