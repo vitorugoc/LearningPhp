@@ -7,6 +7,18 @@
 <script>
 export default {
   name: "HomeView",
+  activated(){
+    console.log('Componente é ativado')
+  },
+  deactivated(){
+    console.log('Componente é desativadp')
+  },
+  beforeUnmount(){
+    console.log('Antes de desmontar')
+  },
+  unmounted(){
+    console.log('Desmontado')
+  }
 };
 </script>
 

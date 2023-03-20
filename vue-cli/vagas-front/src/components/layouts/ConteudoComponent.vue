@@ -6,7 +6,10 @@
     <button @click="conteudo = 'publicar-vaga-view'">Publicar Vaga</button>
     <!-- <home-view />
     <publicar-vaga-view /> -->
-    <component :is="conteudo" />
+    <keep-alive>
+      <component :is="conteudo" />
+    </keep-alive>
+
   </div>
 </template>
 
@@ -30,57 +33,58 @@ export default {
     PublicarVagaView: PublicarVagaView
 
   },
-  beforeCreate(){
+  beforeCreate() {
     console.log('Antes de criar', this.teste)
   },
-  created(){
+  created() {
     console.log('Criado', this.teste)
   },
 
-  beforeMount(){
+  beforeMount() {
     console.log("Antes de montar o template")
   },
-  mounted(){
+  mounted() {
     console.log('Montado')
   },
-      
-  beforeUpdate(){
+
+  beforeUpdate() {
     console.log('Antes de atualizar')
   },
-  updated(){
+  updated() {
     console.log('Atualizado')
   },
-  beforeUnmount(){
+  beforeUnmount() {
     console.log('Antes de desmontar')
   },
-  unmounted(){
+  unmounted() {
     console.log('Desmontado')
   },
-    /*
-  errorCaptured(){
-    console.log('Erro capturado')
-  },
-  renderTracked(){
-    console.log('Re-renderização rastreada')
-  },
-  renderTriggered(){
-    console.log('Re-renderizaçao acionada')
-  },
-  activated(){
-    console.log('Componente é ativado')
-  },
-  deactivated(){
-    console.log('Componente desativado')
-  }
-  */
+  /*
+errorCaptured(){
+  console.log('Erro capturado')
+},
+renderTracked(){
+  console.log('Re-renderização rastreada')
+},
+renderTriggered(){
+  console.log('Re-renderizaçao acionada')
+},
+activated(){
+  console.log('Componente é ativado')
+},
+deactivated(){
+  console.log('Componente desativado')
+}
+*/
 }
 </script>
 
 <style module>
-.teste-1{
+.teste-1 {
   background-color: red;
 }
-#teste-2{
+
+#teste-2 {
   background-color: yellow;
 }
 </style>
