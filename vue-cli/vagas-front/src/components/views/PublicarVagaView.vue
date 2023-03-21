@@ -26,7 +26,7 @@
       <div class="col">
         <label class="form-label">Salário</label>
         <input type="number" class="form-control" v-model="salario" />
-        <div class="form-text">Infrome o Salário</div>
+        <div class="form-text">Informe o Salário</div>
       </div>
 
       <div class="col">
