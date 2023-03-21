@@ -17,12 +17,33 @@
 export default {
   name: "VagaComponent",
   props: {
-    titulo: String,
-    descricao: String,
-    salario: Number,
-    modalidade: String,
-    tipo: String,
-    publicacao: String,
+    titulo: {
+      type: String,
+      required: true,
+      validator(p) {
+        return p.length > 3 ? true : false;
+      },
+    },
+    descricao: {
+      type: String,
+      required: true,
+    },
+    salario: {
+      type: [Number, String],
+      required: true,
+    },
+    modalidade: {
+      type: String,
+      required: true,
+    },
+    tipo: {
+      type: String,
+      required: true,
+    },
+    publicacao: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>
