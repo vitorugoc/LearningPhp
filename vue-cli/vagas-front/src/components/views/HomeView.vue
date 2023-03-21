@@ -25,7 +25,7 @@
       <div class="col-4">
         <IndicadorComponent
           titulo="Visitantes Online"
-          indicador="25"
+          :indicador="usuariosOnline"
           bg="bg-light"
           color="text-dark"
         />
@@ -42,6 +42,17 @@ export default {
   components: {
     PesquisarVagas,
     IndicadorComponent,
+  },
+  data: () => ({
+    usuariosOnline: 0,
+  }),
+  methods: {
+    getUsuariosOnline() {
+      this.usuariosOnline = Math.floor(Math.random() * 101);
+    },
+  },
+  created() {
+    setInterval(this.getUsuariosOnline, 1000);
   },
   activated() {
     console.log("Componente é ativado");
