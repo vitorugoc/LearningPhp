@@ -27,6 +27,7 @@ export default {
     descricao: {
       type: String,
       required: true,
+      default: "O contratante não adicionou uma descrição para essa vaga",
     },
     salario: {
       type: [Number, String],
