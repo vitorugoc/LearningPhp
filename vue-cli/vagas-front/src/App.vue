@@ -8,25 +8,24 @@
 </template>
 
 <script>
-import ConteudoComponent from './components/layouts/ConteudoComponent.vue'
-import TopoPadrao from './components/layouts/TopoPadrao.vue'
+import ConteudoComponent from "./components/layouts/ConteudoComponent.vue";
+import TopoPadrao from "./components/layouts/TopoPadrao.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   data: () => ({
-    visibilidade: true
+    visibilidade: true,
   }),
   methods: {
-    desmontarComponente(){
-      this.visibilidade = false
-    }
+    desmontarComponente() {
+      this.visibilidade = false;
+    },
   },
   components: {
     Conteudo: ConteudoComponent,
-    TopoPadrao: TopoPadrao
-  }
-}
+    TopoPadrao: TopoPadrao,
+  },
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
