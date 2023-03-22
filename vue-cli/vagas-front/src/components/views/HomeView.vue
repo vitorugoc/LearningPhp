@@ -111,7 +111,7 @@ export default {
     console.log("Componente é ativado");
   },
   deactivated() {
-    console.log("Componente é desativadp");
+    console.log("Componente é desativado  ");
   },
   beforeUnmount() {
     console.log("Antes de desmontar");
