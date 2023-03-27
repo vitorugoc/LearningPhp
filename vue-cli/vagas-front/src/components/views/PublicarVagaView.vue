@@ -32,6 +32,7 @@
       <div class="col">
         <label class="form-label">Modalidade</label>
         <select type="text" class="form-select" v-model="modalidade">
+          <option value="" disabled>---- Selecione ----</option>
           <option value="1">Home Office</option>
           <option value="2">Presencial</option>
         </select>
@@ -41,6 +42,7 @@
       <div class="col">
         <label class="form-label">Tipo</label>
         <select type="text" class="form-select" v-model="tipo">
+          <option value="" disabled>---- Selecione ----</option>
           <option value="1">CLT</option>
           <option value="2">PJ</option>
         </select>
@@ -51,7 +53,9 @@
     <div class="row mt-3">
       {{ titulo }} | {{ descricao }} | {{ salario }} | {{ modalidade }} | {{ tipo }} |
       <div class="col">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button @click="salvarVaga()" type="submit" class="btn btn-primary">
+          Cadastrar
+        </button>
       </div>
     </div>
   </div>
@@ -73,7 +77,7 @@ export default {
         titulo: this.titulo,
         descricao: this.descricao,
         salario: this.salario,
-        modalidade: this.moadlidade,
+        modalidade: this.modalidade,
         tipo: this.tipo,
       };
       localStorage.setItem("vagas", JSON.stringify(vaga));
