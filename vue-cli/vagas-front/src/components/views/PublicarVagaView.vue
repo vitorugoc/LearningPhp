@@ -73,8 +73,11 @@ export default {
   }),
   methods: {
     salvarVaga() {
+      let tempoDecorrido = Date.now();
+      let dataAtual = new Date(tempoDecorrido);
+      let dataPublicacao = dataAtual.toISOString();
       let vagas = JSON.parse(localStorage.getItem("vagas"));
-      console.log(vagas);
+      //console.log(vagas);
 
       if (!vagas) vagas = [];
 
@@ -84,6 +87,7 @@ export default {
         salario: this.salario,
         modalidade: this.modalidade,
         tipo: this.tipo,
+        publicacao: dataPublicacao,
       });
 
       localStorage.setItem("vagas", JSON.stringify(vagas));
