@@ -7,7 +7,7 @@
     <div class="card-footer">
       <small class="text-muted"
         >Salário: {{ salario }} | Modalidade: {{ getModalidade }} | Tipo: {{ getTipo }} |
-        Publicação: {{ publicacao }}</small
+        Publicação: {{ getPublicacao }}</small
       >
     </div>
   </div>
@@ -64,6 +64,10 @@ export default {
           return "PJ";
       }
       return "";
+    },
+    getPublicacao() {
+      let data = new Date(this.publicacao).toLocaleString("pt-BR");
+      return data.toLocaleString("pt-BR");
     },
   },
 };
