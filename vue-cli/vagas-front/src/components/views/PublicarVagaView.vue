@@ -77,7 +77,6 @@ export default {
       let dataAtual = new Date(tempoDecorrido);
       let dataPublicacao = dataAtual.toISOString();
       let vagas = JSON.parse(localStorage.getItem("vagas"));
-      //console.log(vagas);
 
       if (!vagas) vagas = [];
 
