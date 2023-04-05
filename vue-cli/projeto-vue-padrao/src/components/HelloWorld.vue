@@ -11,6 +11,11 @@ export default {
       variavel: process.env.VUE_APP_MINHA_VARIAVEL_DE_AMBIENTE,
     };
   },
+  computed: {
+    nomeCompleto() {
+      return this.nome + " " + this.sobrenome;
+    },
+  },
   name: "HelloWorld",
 };
 </script>
