@@ -2,7 +2,7 @@
   <div>
     <h1>Componente App</h1>
     <button @click="desmontarComponente()">Desmontar o componente Conteudo</button>
-    <topo-padrao @nomeDoEventoQueSeraCapturadoNoComponentePai="acao()" />
+    <topo-padrao @nomeDoEventoQueSeraCapturadoNoComponentePai="$event('Texto1', 125)" />
     <conteudo v-if="visibilidade"></conteudo>
   </div>
 </template>

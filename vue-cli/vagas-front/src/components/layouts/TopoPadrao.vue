@@ -32,7 +32,11 @@ export default {
   name: "TopoComponent",
   methods: {
     navegarPara() {
-      this.$emit("nomeDoEventoQueSeraCapturadoNoComponentePai");
+      this.$emit("nomeDoEventoQueSeraCapturadoNoComponentePai", (p1, p2) => {
+        console.log("Funcao de callback emitida pelo componente filho");
+        console.log("P1:", p1);
+        console.log("P2:", p2);
+      });
     },
   },
 };
