@@ -16,10 +16,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#" @click="funcaoCallback()">Home</a>
+            <a class="nav-link" href="#" @click="navegarPara('HomeView')">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" @click="funcaoCallback()">Publicar Vaga</a>
+            <a class="nav-link" href="#" @click="navegarPara('PublicarVagaView')"
+              >Publicar Vaga</a
+            >
           </li>
         </ul>
       </div>
@@ -30,8 +32,10 @@
 <script>
 export default {
   name: "TopoComponent",
-  props: {
-    funcaoCallback: Function,
+  methods: {
+    navegarPara(p1) {
+      this.$emit("navegar", p1);
+    },
   },
 };
 </script>

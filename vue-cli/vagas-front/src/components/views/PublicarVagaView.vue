@@ -51,7 +51,6 @@
     </div>
 
     <div class="row mt-3">
-      {{ titulo }} | {{ descricao }} | {{ salario }} | {{ modalidade }} | {{ tipo }} |
       <div class="col">
         <button @click="salvarVaga()" type="submit" class="btn btn-primary">
           Cadastrar

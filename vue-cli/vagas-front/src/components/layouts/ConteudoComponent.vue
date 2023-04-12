@@ -1,11 +1,5 @@
 <template>
   <div>
-    <h1>{{ titulo }}</h1>
-    <button @click="atualizarComponente()">Atualizar</button>
-    <button @click="conteudo = 'home-view'">Home</button>
-    <button @click="conteudo = 'publicar-vaga-view'">Publicar Vaga</button>
-    <!-- <home-view />
-    <publicar-vaga-view /> -->
     <keep-alive>
       <component :is="conteudo" />
     </keep-alive>
@@ -17,14 +11,10 @@ import HomeView from "../views/HomeView.vue";
 import PublicarVagaView from "../views/PublicarVagaView.vue";
 export default {
   name: "ConteudoComponent",
-  data: () => ({
-    teste: "O  componente foi criado",
-    titulo: "Componente Conteudo",
-    conteudo: "",
-  }),
-  methods: {
-    atualizarComponente() {
-      this.titulo += "*";
+  props: {
+    conteudo: {
+      type: String,
+      required: true,
     },
   },
   components: {
