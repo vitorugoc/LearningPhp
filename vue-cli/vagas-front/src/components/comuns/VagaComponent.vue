@@ -10,6 +10,9 @@
             <div class="form-check form-switch">
               <input type="checkbox" class="form-check-input" />
               <label class="form-check-label">Favoritar</label>
+              <button class="btn btn-danger" @click="dispararEnventoComMitt()">
+                Teste
+              </button>
             </div>
           </div>
         </div>
@@ -29,6 +32,11 @@
 <script>
 export default {
   name: "VagaComponent",
+  methods: {
+    dispararEnventoComMitt() {
+      this.emitter.emit("eventoGlobal1", "Teste");
+    },
+  },
   props: {
     titulo: {
       type: String,
