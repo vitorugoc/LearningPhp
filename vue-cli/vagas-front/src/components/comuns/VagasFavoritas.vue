@@ -19,7 +19,7 @@
       aria-labelledby="offcanvasRightLabel"
     >
       <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+        <h5 id="offcanvasRightLabel">Vagas Favoritadas</h5>
         <button
           type="button"
           class="btn-close text-reset"
@@ -27,7 +27,13 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="offcanvas-body">...</div>
+      <div class="offcanvas-body">
+        <ul class="list-group">
+          <li class="list-group-item" v-for="(vaga, index) in vagas" :key="index">
+            {{ vaga }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -35,9 +41,16 @@
 <script>
 export default {
   name: "VagasFavoritas",
+  data: () => ({
+    vagas: [],
+  }),
   mounted() {
-    this.emitter.on("eventoGlobal1", (msg) => {
-      console.log("Componente VF" + msg);
+    this.emitter.on("favoritar", (titulo) => {
+      this.vagas.push(titulo);
+    });
+    this.emitter.on("desfavoritar", (titulo) => {
+      let indice = this.vagas.indexOf(titulo);
+      if (indice !== -1) this.vagas.splice(indice, 1);
     });
   },
 };

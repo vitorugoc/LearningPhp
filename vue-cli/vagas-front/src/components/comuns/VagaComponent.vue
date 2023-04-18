@@ -8,11 +8,8 @@
           </div>
           <div>
             <div class="form-check form-switch">
-              <input type="checkbox" class="form-check-input" />
+              <input type="checkbox" class="form-check-input" v-model="favoritada" />
               <label class="form-check-label">Favoritar</label>
-              <button class="btn btn-danger" @click="dispararEnventoComMitt()">
-                Teste
-              </button>
             </div>
           </div>
         </div>
@@ -32,11 +29,19 @@
 <script>
 export default {
   name: "VagaComponent",
-  methods: {
-    dispararEnventoComMitt() {
-      this.emitter.emit("eventoGlobal1", "Teste");
+  data: () => ({
+    favoritada: false,
+  }),
+  watch: {
+    favoritada(novoValor) {
+      if (novoValor) {
+        this.emitter.emit("favoritar", this.titulo);
+      } else {
+        this.emitter.emit("desfavoritar", this.titulo);
+      }
     },
   },
+  methods: {},
   props: {
     titulo: {
       type: String,
