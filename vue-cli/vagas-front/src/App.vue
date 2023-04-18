@@ -18,12 +18,18 @@ export default {
   data: () => ({
     visibilidade: true,
     componente: "HomeView",
+    exibirAlerta: false,
   }),
   components: {
     Conteudo: ConteudoComponent,
     TopoPadrao: TopoPadrao,
     VagasFavoritas: VagasFavoritas,
     AlertaComponent,
+  },
+  mounted() {
+    this.emitter.on("alerta", () => {
+      console.log("Alerta");
+    });
   },
 };
 </script>
