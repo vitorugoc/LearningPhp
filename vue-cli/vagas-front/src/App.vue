@@ -6,9 +6,7 @@
       <template v-slot:titulo>
         <h5>Titulo do alerta</h5>
       </template>
-      <template v-slot:descricao>
-        <p>Conteudo do alerta</p>
-      </template>
+      <p>Conteudo do alerta</p>
     </AlertaComponent>
     <conteudo v-if="visibilidade" :conteudo="componente"></conteudo>
   </div>
