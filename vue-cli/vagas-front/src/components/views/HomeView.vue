@@ -5,12 +5,8 @@
         <PesquisarVagas></PesquisarVagas>
       </div>
     </div>
+    <ListaVagas :vagas="vagas"> </ListaVagas>
 
-    <div class="row mt-5" v-for="(vaga, index) in vagas" :key="index">
-      <div class="col">
-        <VagaComponent v-bind="vaga" />
-      </div>
-    </div>
     <div class="row mt-5">
       <div class="col-4">
         <IndicadorComponent
@@ -43,14 +39,15 @@
 <script>
 import PesquisarVagas from "../comuns/PesquisarVagas.vue";
 import IndicadorComponent from "../comuns/IndicadorComponent.vue";
-import VagaComponent from "../comuns/VagaComponent.vue";
+
+import ListaVagas from "../comuns/ListaVagas.vue";
 
 export default {
   name: "HomeView",
   components: {
     PesquisarVagas,
     IndicadorComponent,
-    VagaComponent,
+    ListaVagas,
   },
   data: () => ({
     usuariosOnline: 0,
@@ -66,6 +63,14 @@ export default {
   },
   activated() {
     this.vagas = JSON.parse(localStorage.getItem("vagas"));
+  },
+  mounted() {
+    this.emitter.on("filtrarVagas", (titulo) => {
+      this.vagas = JSON.parse(localStorage.getItem("vagas"));
+      this.vagas = this.vagas.filter((vaga) => {
+        return vaga.titulo.toLowerCase().includes(titulo.toLowerCase());
+      });
+    });
   },
 };
 </script>

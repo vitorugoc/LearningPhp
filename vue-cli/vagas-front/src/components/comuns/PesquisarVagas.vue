@@ -9,6 +9,7 @@
             type="text"
             class="form-control"
             placeholder="Pesquise por palavras chaves, por exemplo PHP, Pleno, Analista"
+            v-model="titulo"
           />
           <small class="form-text text-muted"
             >Informe palavras que estejam relacionadas com o título da vaga que você
@@ -19,7 +20,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <button class="btn btn-outline-dark mt-2">Buscar</button>
+        <button class="btn btn-outline-dark mt-2" @click="pesquisarVaga()">Buscar</button>
       </div>
     </div>
   </div>
@@ -28,5 +29,15 @@
 <script>
 export default {
   name: "PesquisarVagas",
+  data() {
+    return {
+      titulo: "",
+    };
+  },
+  methods: {
+    pesquisarVaga() {
+      this.emitter.emit("filtrarVagas", this.titulo);
+    },
+  },
 };
 </script>
