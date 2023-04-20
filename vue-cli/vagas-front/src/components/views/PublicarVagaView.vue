@@ -87,11 +87,22 @@ export default {
         tipo: this.tipo,
         publicacao: dataPublicacao,
       });
+      if (this.validaFormulario()) {
+        localStorage.setItem("vagas", JSON.stringify(vagas));
+        this.emitter.emit("alerta", {
+          tipo: "sucesso",
+          titulo: `A vaga ${this.titulo} foi cadastrada com sucesso!`,
+          descricao: `Parabéns, a vaga foi cadastrada e poderá ser consultada por milhares de profissionais em nossa plataforma.`,
+        });
 
-      //localStorage.setItem("vagas", JSON.stringify(vagas));
-      this.emitter.emit("alerta");
-
-      this.resetaFormularioCadastroVaga();
+        this.resetaFormularioCadastroVaga();
+      } else {
+        this.emitter.emit("alerta", {
+          tipo: "erro",
+          titulo: `Por favor, preencha todos os campos!`,
+          descricao: `Parece que você esqueceu de preencher todos os campos. Favor verificar e tentar novamente.`,
+        });
+      }
     },
     resetaFormularioCadastroVaga() {
       this.titulo = "";
@@ -99,6 +110,11 @@ export default {
       this.salario = "";
       this.modalidade = "";
       this.tipo = "";
+    },
+    validaFormulario() {
+      return (
+        this.titulo && this.descricao && this.salario && this.modalidade && this.tipo
+      );
     },
   },
 };

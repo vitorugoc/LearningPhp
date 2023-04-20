@@ -2,11 +2,11 @@
   <div>
     <VagasFavoritas></VagasFavoritas>
     <topo-padrao @navegar="componente = $event" />
-    <AlertaComponent v-if="exibirAlerta">
+    <AlertaComponent v-if="exibirAlerta" :tipo="alerta.tipo">
       <template v-slot:titulo>
-        <h5>Titulo do alerta</h5>
+        <h5>{{ alerta.titulo }}</h5>
       </template>
-      <p>Conteudo do alerta</p>
+      <p>{{ alerta.descricao }}</p>
     </AlertaComponent>
     <conteudo v-if="visibilidade" :conteudo="componente"></conteudo>
   </div>
@@ -21,6 +21,11 @@ import AlertaComponent from "./components/comuns/AlertaComponent.vue";
 export default {
   name: "App",
   data: () => ({
+    alerta: {
+      tipo: "",
+      titulo: "",
+      descricao: "",
+    },
     visibilidade: true,
     componente: "HomeView",
     exibirAlerta: false,
@@ -32,12 +37,12 @@ export default {
     AlertaComponent,
   },
   mounted() {
-    this.emitter.on("alerta", () => {
+    this.emitter.on("alerta", (a) => {
       this.exibirAlerta = true;
+      this.alerta = a;
       setTimeout(() => {
         this.exibirAlerta = false;
       }, 4000);
-      console.log("Alerta");
     });
   },
 };
