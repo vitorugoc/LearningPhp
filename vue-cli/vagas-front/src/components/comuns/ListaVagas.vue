@@ -14,10 +14,21 @@ export default {
   components: {
     VagaComponent,
   },
-  props: {
-    vagas: {
-      type: Array,
-    },
+  data() {
+    return {
+      vagas: [],
+    };
+  },
+  activated() {
+    this.vagas = JSON.parse(localStorage.getItem("vagas"));
+  },
+  mounted() {
+    this.emitter.on("filtrarVagas", (titulo) => {
+      this.vagas = JSON.parse(localStorage.getItem("vagas"));
+      this.vagas = this.vagas.filter((vaga) => {
+        return vaga.titulo.toLowerCase().includes(titulo.toLowerCase());
+      });
+    });
   },
 };
 </script>

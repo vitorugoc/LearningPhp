@@ -5,7 +5,7 @@
         <PesquisarVagas></PesquisarVagas>
       </div>
     </div>
-    <ListaVagas :vagas="vagas"> </ListaVagas>
+    <ListaVagas> </ListaVagas>
 
     <div class="row mt-5">
       <div class="col-4">
@@ -51,7 +51,6 @@ export default {
   },
   data: () => ({
     usuariosOnline: 0,
-    vagas: [],
   }),
   methods: {
     getUsuariosOnline() {
@@ -60,17 +59,6 @@ export default {
   },
   created() {
     setInterval(this.getUsuariosOnline, 1000);
-  },
-  activated() {
-    this.vagas = JSON.parse(localStorage.getItem("vagas"));
-  },
-  mounted() {
-    this.emitter.on("filtrarVagas", (titulo) => {
-      this.vagas = JSON.parse(localStorage.getItem("vagas"));
-      this.vagas = this.vagas.filter((vaga) => {
-        return vaga.titulo.toLowerCase().includes(titulo.toLowerCase());
-      });
-    });
   },
 };
 </script>
