@@ -5,7 +5,17 @@
         <PesquisarVagas></PesquisarVagas>
       </div>
     </div>
-    <ListaVagas> </ListaVagas>
+    <h2>Template customizado</h2>
+    <ListaVagas v-slot:default="slotProps">
+      <div v-for="(vaga, index) in slotProps.vagas" :key="index">
+        <h4>{{ vaga.titulo }}</h4>
+        <p>{{ vaga.descricao }}</p>
+        <hr />
+      </div>
+    </ListaVagas>
+    <br />
+    <h2>Template Padrão</h2>
+    <ListaVagas></ListaVagas>
 
     <div class="row mt-5">
       <div class="col-4">
